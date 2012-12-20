@@ -1,0 +1,15 @@
+LICENSE = "proprietary-binary"
+LIC_FILES_CHKSUM = "file://TSPA_Object_Code_Software_License_Agreement.txt;md5=3f40d7994397109285ec7b81fdeb3b58"
+
+SRC_URI = "file://tiwlan-wl12xx-firmware_${PV}.orig.tar.gz"
+
+S = "${WORKDIR}"
+
+tqsfile="/lib/firmware/ti-connectivity/r5_updates/TQS_S_2.6.ini"
+
+do_install() {
+    cp -rP ${S}/lib ${D}
+    cp ${S}/${tqsfile}_127x ${D}/${tqsfile}
+}
+
+

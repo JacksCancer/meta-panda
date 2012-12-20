@@ -1,0 +1,21 @@
+require gst-plugins-1.0.inc
+
+LICENSE = "GPLv2+ & LGPLv2+ & LGPLv2.1+ "
+LIC_FILES_CHKSUM = "file://COPYING;md5=73a5855a8119deb017f5f13cf327095d"
+
+DEPENDS += "gst-plugins-base libdrm"
+
+PR = "r0"
+
+SRCREV= "7b1c9e8fb91405932c8f387814b3dc822c7e62b8"
+
+inherit gettext
+
+#EXTRA_OECONF += "--disable-examples --disable-experimental --disable-sdl --disable-cdaudio --disable-directfb \
+#                 --with-plugins=musicbrainz,wavpack,ivorbis,mpegvideoparse,kms --disable-vdpau --disable-apexsink \
+#                 --disable-orc --disable-pvr"
+
+#ARM_INSTRUCTION_SET = "arm"
+
+SRC_URI[md5sum] = "fcb09798114461955260e4d940db5987"
+SRC_URI[sha256sum] = "0eae7d1a1357ae8377fded6a1b42e663887beabe0e6cc336e2ef9ada42e11491"
