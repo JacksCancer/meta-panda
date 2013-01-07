@@ -1,0 +1,14 @@
+--- weston-0.95.0/Makefile.am.orig	2012-12-25 13:01:15.059933011 +0100
++++ weston-0.95.0/Makefile.am	2012-12-25 13:01:35.635933085 +0100
+@@ -2,9 +2,9 @@
+ wcap_subdir = wcap
+ endif
+ 
+-SUBDIRS = shared src clients data protocol tests $(wcap_subdir)
++SUBDIRS = shared src clients data protocol $(wcap_subdir)
+ 
+-DIST_SUBDIRS = shared src clients data protocol tests wcap
++DIST_SUBDIRS = shared src clients data protocol wcap
+ 
+ 
+ DISTCHECK_CONFIGURE_FLAGS = --disable-setuid-install
