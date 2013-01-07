@@ -33,6 +33,11 @@ IMAGE_INSTALL += " \
     panda-init \
     pvr-omap4 \
     tiomapconf \
+    weston \
+    wayland \
+    xkeyboard-config \
+    gdbserver \
+    gdb \
 "
 
 #panda-init \
