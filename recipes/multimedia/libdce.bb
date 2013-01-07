@@ -3,12 +3,12 @@ SECTION = "multimedia"
 LICENSE = "TI"
 LIC_FILES_CHKSUM = "file://COPYING;md5=483f94bdaf5d31cd94aa2317f9ad2684"
 
-DEPENDS = "libdrm"
+DEPENDS = "libdrm wayland"
 
 inherit autotools lib_package
 
 PV = "1.6.7"
-PR = "r2"
+PR = "r3"
 PR_append = "+gitr${SRCREV}"
 
 SRCREV = "ee4f5fd145de23fb00ee61a4f98dc4f8ae7d812e"
