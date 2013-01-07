@@ -1,0 +1,10 @@
+--- git/ext/wayland/Makefile.am.orig	2012-12-23 22:08:36.178008154 +0100
++++ git/ext/wayland/Makefile.am	2012-12-23 22:06:19.990007213 +0100
+@@ -2,6 +2,7 @@
+ 
+ libgstwaylandsink_la_SOURCES =  gstwaylandsink.c gstwlbufferpriv.c wayland-drm-protocol.c
+ libgstwaylandsink_la_CFLAGS = $(GST_CFLAGS) $(GST_PLUGINS_BASE_CFLAGS) \
++                               $(GST_PLUGINS_BAD_CFLAGS) \
+                                $(WAYLAND_CFLAGS) $(DRM_CFLAGS)
+ libgstwaylandsink_la_LIBADD = $(GST_PLUGINS_BASE_LIBS) \
+                                -lgstvideo-$(GST_MAJORMINOR) \

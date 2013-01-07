@@ -6,11 +6,15 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=0636e73ff0215e8d672dc4c32c317bb3\
                     file://COPYING.LIB;md5=55ca817ccb7d5b5b66355690e9abc605 \
                     file://gst/tta/crc32.h;beginline=12;endline=29;md5=71a904d99ce7ae0c1cf129891b98145c"
 
-DEPENDS += "gst-plugins-base gst-plugins-good libdrm bzip2"
+DEPENDS += "gst-plugins-base gst-plugins-good gst-plugins-ugly gst-ffmpeg libdrm bzip2 libdce faad2"
 
-PR = "r4"
+PR = "r6"
 
 SRCREV= "9dce1a7317676c41136c83654677530ec3f30b1b"
+
+SRC_URI += " \
+		file://wayland-add-gst-plugins-bad-cflags.patch \
+		"
 
 inherit gettext
 
