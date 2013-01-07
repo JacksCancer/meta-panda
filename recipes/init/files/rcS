@@ -14,10 +14,12 @@ mdev -s
 
 insmod /lib/modules/`uname -r`/kernel/drivers/omapdrm_pvr.ko
 
-for mo in omap_rpmsg_resmgr rpmsg_resmgr_common omap_remoteproc omaprpc rpmsg_omx omapdce
+for mo in omap_rpmsg_resmgr rpmsg_resmgr_common omap_remoteproc omaprpc rpmsg_omx omapdce ehci-hcd
 do
     modprobe $mo
 done
+
+pvrsrvinit
 
 alsactl restore -f /etc/asound.state
 
