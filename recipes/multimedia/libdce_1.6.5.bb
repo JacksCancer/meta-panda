@@ -8,11 +8,14 @@ DEPENDS = "libdrm wayland"
 inherit autotools lib_package
 
 PV = "1.6.5"
-PR = "r2"
+PR = "r3"
 PR_append = "+gitr${SRCREV}"
 
 SRCREV = "0c0ed32efd7569d2c65a4946c56150a344a63c5b"
-SRC_URI = "git://gitorious.org/gstreamer-omap/libdce.git;protocol=git"
+SRC_URI = " \
+  git://gitorious.org/gstreamer-omap/libdce.git;protocol=git \
+  file://fix-dce-get-fd-prototype.patch \
+  "
 
 S = "${WORKDIR}/git"
 
