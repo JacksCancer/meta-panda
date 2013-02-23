@@ -20,6 +20,7 @@ IMAGE_INSTALL += " \
     gst-ffmpeg \
     alsa-utils \
     alsa-ucm-conf \
+    iw \
     wpa-supplicant \
     wl12xx-firmware \
     libnl \
@@ -36,6 +37,12 @@ IMAGE_INSTALL += " \
     weston \
     wayland \
     xkeyboard-config \
+    kmscon \
+    elementary \
+    eeze \
+    xorg-minimal-fonts \
+    ttf-bitstream-vera \
+    liberation-fonts \
     gdbserver \
     gdb \
 "
