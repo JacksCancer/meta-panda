@@ -87,7 +87,7 @@ state.PandaBoard {
 	control.7 {
 		iface MIXER
 		name 'DL1 Media Playback Volume'
-		value 71
+		value 100
 		comment {
 			access 'read write'
 			type INTEGER
@@ -95,13 +95,13 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 -4900
+			dbvalue.0 -2000
 		}
 	}
 	control.8 {
 		iface MIXER
 		name 'DL1 Tones Playback Volume'
-		value 148
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -109,7 +109,7 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 2800
+			dbvalue.0 -9999999
 		}
 	}
 	control.9 {
@@ -143,7 +143,7 @@ state.PandaBoard {
 	control.11 {
 		iface MIXER
 		name 'DL2 Media Playback Volume'
-		value 149
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -151,13 +151,13 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 2900
+			dbvalue.0 -9999999
 		}
 	}
 	control.12 {
 		iface MIXER
 		name 'DL2 Tones Playback Volume'
-		value 139
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -165,7 +165,7 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 1900
+			dbvalue.0 -9999999
 		}
 	}
 	control.13 {
@@ -311,7 +311,7 @@ state.PandaBoard {
 	control.23 {
 		iface MIXER
 		name 'SDT UL Volume'
-		value 149
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -319,13 +319,13 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 2900
+			dbvalue.0 -9999999
 		}
 	}
 	control.24 {
 		iface MIXER
 		name 'SDT DL Volume'
-		value 149
+		value 120
 		comment {
 			access 'read write'
 			type INTEGER
@@ -333,7 +333,7 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 2900
+			dbvalue.0 0
 		}
 	}
 	control.25 {
@@ -387,8 +387,8 @@ state.PandaBoard {
 	control.28 {
 		iface MIXER
 		name 'AMIC UL Volume'
-		value.0 116
-		value.1 116
+		value.0 120
+		value.1 120
 		comment {
 			access 'read write'
 			type INTEGER
@@ -396,15 +396,15 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 -400
-			dbvalue.1 -400
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.29 {
 		iface MIXER
 		name 'BT UL Volume'
-		value.0 121
-		value.1 121
+		value.0 120
+		value.1 120
 		comment {
 			access 'read write'
 			type INTEGER
@@ -412,8 +412,8 @@ state.PandaBoard {
 			range '0 - 149'
 			dbmin -9999999
 			dbmax 2900
-			dbvalue.0 100
-			dbvalue.1 100
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.30 {
@@ -429,7 +429,7 @@ state.PandaBoard {
 	control.31 {
 		iface MIXER
 		name 'DL2 Mono Mixer'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -449,7 +449,7 @@ state.PandaBoard {
 	control.33 {
 		iface MIXER
 		name 'DL1 MM_EXT Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -519,7 +519,7 @@ state.PandaBoard {
 	control.40 {
 		iface MIXER
 		name 'Capture Mixer Voice Capture'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -569,7 +569,7 @@ state.PandaBoard {
 	control.45 {
 		iface MIXER
 		name 'DL2 Mixer Tones'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -579,7 +579,7 @@ state.PandaBoard {
 	control.46 {
 		iface MIXER
 		name 'DL2 Mixer Voice'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -599,7 +599,7 @@ state.PandaBoard {
 	control.48 {
 		iface MIXER
 		name 'DL2 Mixer Multimedia'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -899,7 +899,7 @@ state.PandaBoard {
 	control.63 {
 		iface MIXER
 		name MUX_UL01
-		value AMic1
+		value 'MMExt Right'
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -924,7 +924,7 @@ state.PandaBoard {
 	control.64 {
 		iface MIXER
 		name MUX_UL00
-		value AMic0
+		value 'MMExt Left'
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -965,8 +965,8 @@ state.PandaBoard {
 	control.66 {
 		iface MIXER
 		name 'Capture Volume'
-		value.0 4
-		value.1 4
+		value.0 1
+		value.1 1
 		comment {
 			access 'read write'
 			type INTEGER
@@ -974,8 +974,8 @@ state.PandaBoard {
 			range '0 - 4'
 			dbmin 600
 			dbmax 3000
-			dbvalue.0 3000
-			dbvalue.1 3000
+			dbvalue.0 1200
+			dbvalue.1 1200
 		}
 	}
 	control.67 {
@@ -1029,7 +1029,7 @@ state.PandaBoard {
 	control.70 {
 		iface MIXER
 		name 'Earphone Playback Volume'
-		value 15
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -1037,7 +1037,7 @@ state.PandaBoard {
 			range '0 - 15'
 			dbmin -2400
 			dbmax 600
-			dbvalue.0 600
+			dbvalue.0 -2400
 		}
 	}
 	control.71 {
@@ -1147,7 +1147,7 @@ state.PandaBoard {
 	control.80 {
 		iface MIXER
 		name 'Handsfree Right Playback'
-		value 'HF DAC'
+		value Off
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -1160,7 +1160,7 @@ state.PandaBoard {
 	control.81 {
 		iface MIXER
 		name 'Handsfree Left Playback'
-		value 'HF DAC'
+		value Off
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -1173,7 +1173,7 @@ state.PandaBoard {
 	control.82 {
 		iface MIXER
 		name 'Analog Right Capture Route'
-		value 'Headset Mic'
+		value Off
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -1187,7 +1187,7 @@ state.PandaBoard {
 	control.83 {
 		iface MIXER
 		name 'Analog Left Capture Route'
-		value 'Headset Mic'
+		value Off
 		comment {
 			access 'read write'
 			type ENUMERATED
