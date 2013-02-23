@@ -8,13 +8,15 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=0636e73ff0215e8d672dc4c32c317bb3\
 
 DEPENDS += "gst-plugins-base gst-plugins-good gst-plugins-ugly gst-ffmpeg libdrm bzip2 libdce faad2"
 
-PR = "r6"
+PR = "r8"
 
 SRCREV= "9dce1a7317676c41136c83654677530ec3f30b1b"
 
 SRC_URI += " \
-		file://wayland-add-gst-plugins-bad-cflags.patch \
-		"
+	file://wayland-add-gst-plugins-bad-cflags.patch \
+	file://fix-aspect-ratio.patch \
+	file://add-properties-for-plane-and-crtc.patch \
+	"
 
 inherit gettext
 

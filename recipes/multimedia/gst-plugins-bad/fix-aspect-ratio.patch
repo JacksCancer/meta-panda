@@ -1,0 +1,25 @@
+--- a/sys/kms/gstkmssink.c	2013-01-18 23:17:20.149080845 +0100
++++ b/sys/kms/gstkmssink.c	2013-01-18 23:20:31.804085514 +0100
+@@ -192,6 +192,7 @@
+ 
+   if (sink->conn.crtc == -1) {
+     GstVideoRectangle dest = { 0 };
++    GstVideoRectangle src = { 0 };
+ 
+     if (sink->conn_name) {
+       if (!gst_drm_connector_find_mode_and_plane_by_name (sink->fd,
+@@ -207,10 +208,13 @@
+               &sink->plane))
+         goto connector_not_found;
+     }
++    
++    src.w = GST_VIDEO_SINK_WIDTH (sink);
++    src.h = GST_VIDEO_SINK_HEIGHT (sink);
+ 
+     dest.w = sink->conn.mode->hdisplay;
+     dest.h = sink->conn.mode->vdisplay;
+-    gst_video_sink_center_rect (sink->src_rect, dest, &sink->dst_rect,
++    gst_video_sink_center_rect (src, dest, &sink->dst_rect,
+         sink->scale);
+   }
+ 
