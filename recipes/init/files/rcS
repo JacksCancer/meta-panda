@@ -1,20 +1,19 @@
 #!/bin/sh
 
-
-
 export PATH=$PATH:/usr/sbin:/sbin
 
 mount -t proc proc /proc
 mount -t sysfs none /sys
 mount -t tmpfs none /tmp
 mount -t tmpfs none /var/run
+mount -t tmpfs none /media
 
 echo "/sbin/mdev" > /proc/sys/kernel/hotplug
 mdev -s
 
 insmod /lib/modules/`uname -r`/kernel/drivers/omapdrm_pvr.ko
 
-for mo in omap_rpmsg_resmgr rpmsg_resmgr_common omap_remoteproc omaprpc rpmsg_omx omapdce ehci-hcd
+for mo in omapdce omap_remoteproc ehci-hcd
 do
     modprobe $mo
 done
@@ -22,6 +21,8 @@ done
 pvrsrvinit
 
 alsactl restore -f /etc/asound.state
+
+eplay &
 
 hostname -F /etc/hostname
 mkdir /dev/pts && mount devpts /dev/pts -t devpts -o mode=620
@@ -34,4 +35,3 @@ dropbear
     wpa_supplicant -iwlan0 -c /etc/wpa_supplicant.conf -B
     udhcpc -i wlan0
 ) &
-
